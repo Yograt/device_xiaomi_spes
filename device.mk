@@ -23,6 +23,9 @@ $(call inherit-product, vendor/xiaomi/spes/spes-vendor.mk)
 # Camera
 $(call inherit-product-if-exists, vendor/xiaomi/camera/miuicamera.mk)
 
+#GMS
+$(call inherit-product, vendor/gms/products/gms.mk)
+
 ifeq ($(wildcard hardware/xiaomi/Android.bp),)
 $(error Error: cannot found hardware/xiaomi repository, please clone it and try to build again!)
 endif
