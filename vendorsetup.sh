@@ -7,7 +7,6 @@ END="\033[0m"
 
 # Branches
 VENDOR_BRANCH="15.0"
-KERNEL_BRANCH="NaughtySilver"
 HARDWARE_BRANCH="lineage-21"
 
 # Function to check if a directory exists
@@ -41,14 +40,11 @@ fi
 # Clone Vendor Sources
 if check_dir vendor/xiaomi/spes; then
     echo -e "${GREEN}Cloning vendor sources from spes-development (branch: ${YELLOW}$VENDOR_BRANCH${GREEN})...${END}"
-    git clone https://github.com/spes-development/vendor_xiaomi_spes -b $VENDOR_BRANCH vendor/xiaomi/spes
+    git clone https://github.com/halt-spesn/vendor_xiaomi_spes -b $VENDOR_BRANCH vendor/xiaomi/spes
 fi
 
 # Clone Kernel Sources
-if check_dir kernel/xiaomi/sm6225; then
-    echo -e "${GREEN}Cloning kernel sources from spes-development (branch: ${YELLOW}$KERNEL_BRANCH${GREEN})...${END}"
-    git clone https://github.com/spes-development/kernel_xiaomi_sm6225 --depth=1 -b $KERNEL_BRANCH kernel/xiaomi/sm6225
-fi
+    git clone https://github.com/muralivijay/kernel_xiaomi_sm6225 --depth=1 kernel/xiaomi/sm6225
 
 # Clone Hardware Sources
 if check_dir hardware/xiaomi; then
