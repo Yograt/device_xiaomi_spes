@@ -53,7 +53,7 @@ if check_dir hardware/xiaomi; then
 fi
 
 #Camera
-git clone https://gitlab.com/ThankYouMario/proprietary_vendor_xiaomi_camera.git -b vauxite-sm6225 --depth=1
+git clone https://gitlab.com/ThankYouMario/proprietary_vendor_xiaomi_camera.git -b vauxite-sm6225 --depth=1 vendor/xiaomi/camera
 
 # End
 echo -e "${YELLOW}All patches have been successfully applied; your device sources are now ready!${END}"
