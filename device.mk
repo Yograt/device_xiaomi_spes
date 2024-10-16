@@ -503,7 +503,7 @@ PRODUCT_PACKAGES += \
 
 # USB
 PRODUCT_PACKAGES += \
-    android.hardware.usb@1.2.vendor
+    android.hardware.usb@1.0-service
 
 # Vendor service manager
 PRODUCT_PACKAGES += \
