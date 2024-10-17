@@ -44,7 +44,8 @@ if check_dir vendor/xiaomi/spes; then
 fi
 
 # Clone Kernel Sources
-    git clone https://github.com/muralivijay/kernel_xiaomi_sm6225 --depth=1 kernel/xiaomi/sm6225
+    git clone https://github.com/halt-spesn/kernel_xiaomi_sm6225 --depth=1 kernel/xiaomi/sm6225 -b master
+    
 
 # Clone Hardware Sources
 if check_dir hardware/xiaomi; then
