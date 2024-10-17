@@ -79,6 +79,12 @@ RELAX_USES_LIBRARY_CHECK=true
 ALLOW_MISSING_DEPENDENCIES := true
 BUILD_BROKEN_MISSING_REQUIRED_MODULES := true
 
+SOONG_CONFIG_NAMESPACES += SENSORS_XIAOMI
+SOONG_CONFIG_SENSORS_XIAOMI += USES_DOUBLE_TAP_SENSOR
+SOONG_CONFIG_SENSORS_XIAOMI_USES_DOUBLE_TAP_SENSOR := true
+SOONG_CONFIG_SENSORS_XIAOMI += USES_SINGLE_TAP_SENSOR
+SOONG_CONFIG_SENSORS_XIAOMI_USES_SINGLE_TAP_SENSOR := true
+
 # Configs File System
 TARGET_FS_CONFIG_GEN := $(DEVICE_PATH)/configs/config.fs
 
@@ -152,7 +158,9 @@ BOARD_KERNEL_CMDLINE += \
     msm_rtb.filter=0x237 \
     service_locator.enable=1 \
     swiotlb=2048 \
-    kpti=off
+    kpti=off \
+    init.is_dt2w_sensor=1 \
+    init.is_st2w_sensor=1
 
 TARGET_KERNEL_ARCH := arm64
 TARGET_KERNEL_CONFIG := vendor/spes-perf_defconfig
@@ -211,9 +219,6 @@ TARGET_COPY_OUT_VENDOR := vendor
 # Platform
 BOARD_VENDOR := xiaomi
 TARGET_BOARD_PLATFORM := bengal
-
-# Power
-TARGET_TAP_TO_WAKE_NODE := "/sys/touchpanel/double_tap"
 
 # Properties
 TARGET_ODM_PROP += $(DEVICE_PATH)/odm.prop
