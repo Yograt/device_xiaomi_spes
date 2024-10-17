@@ -7,7 +7,6 @@ END="\033[0m"
 
 # Branches
 VENDOR_BRANCH="15.0"
-HARDWARE_BRANCH="lineage-21"
 
 # Function to check if a directory exists
 check_dir() {
@@ -45,11 +44,14 @@ fi
 
 # Clone Kernel Sources
     git clone https://github.com/halt-spesn/kernel_xiaomi_sm6225 --depth=1 kernel/xiaomi/sm6225 -b master
+    cd kernel/xiaomi/sm6225
+    curl -LSs "https://raw.githubusercontent.com/tiann/KernelSU/main/kernel/setup.sh" | bash -s v0.9.5
+    cd ../../..
     
 
 # Clone Hardware Sources
 if check_dir hardware/xiaomi; then
-    echo -e "${GREEN}Cloning hardware sources from LineageOS (branch: ${YELLOW}$HARDWARE_BRANCH${GREEN})...${END}"
+    echo -e "${GREEN}Cloning hardware sources...${END}"
     git clone https://github.com/halt-spesn/android_hardware_xiaomi -b vauxite hardware/xiaomi
 fi
 
