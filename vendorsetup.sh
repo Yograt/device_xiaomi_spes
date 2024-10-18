@@ -59,6 +59,7 @@ fi
 git clone https://gitlab.com/ThankYouMario/proprietary_vendor_xiaomi_camera.git -b vauxite-sm6225 --depth=1 vendor/xiaomi/camera
 
 sed -i 's/return mButtonClicked && !mWasPlaying && isPlaying();/return false;/g' frameworks/base/packages/SystemUI/src/com/android/systemui/media/controls/ui/controller/MediaControlPanel.java
+sed -i 's/option.build_variant == "user"/option.build_variant == "userdebug"/g' build/soong/scripts/buildinfo.py
 rm -rf vendor/qcom/opensource/commonsys/fm
 
 # End
