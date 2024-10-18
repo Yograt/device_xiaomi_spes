@@ -52,7 +52,7 @@ fi
 # Clone Hardware Sources
 if check_dir hardware/xiaomi; then
     echo -e "${GREEN}Cloning hardware sources...${END}"
-    git clone https://github.com/halt-spesn/android_hardware_xiaomi -b vauxite hardware/xiaomi
+    git clone https://github.com/halt-spesn/hardware_xiaomi -b vauxite hardware/xiaomi
 fi
 
 #Camera
