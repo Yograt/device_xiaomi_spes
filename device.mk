@@ -562,9 +562,9 @@ PRODUCT_PACKAGES += \
 PRODUCT_BOOT_JARS += \
     WfdCommon
 
-# XiaomiParts
+# DisplayFeatures
 PRODUCT_PACKAGES += \
-    XiaomiParts
+    DisplayFeatures
 
 # No Cutout Overlay
 PRODUCT_PACKAGES += \
