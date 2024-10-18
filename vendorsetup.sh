@@ -59,6 +59,7 @@ fi
 git clone https://gitlab.com/ThankYouMario/proprietary_vendor_xiaomi_camera.git -b vauxite-sm6225 --depth=1 vendor/xiaomi/camera
 
 sed -i 's/return mButtonClicked && !mWasPlaying && isPlaying();/return false;/g' frameworks/base/packages/SystemUI/src/com/android/systemui/media/controls/ui/controller/MediaControlPanel.java
+rm -rf vendor/qcom/opensource/commonsys/fm
 
 # End
 echo -e "${YELLOW}All patches have been successfully applied; your device sources are now ready!${END}"
