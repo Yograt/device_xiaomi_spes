@@ -569,3 +569,10 @@ PRODUCT_PACKAGES += \
 # No Cutout Overlay
 PRODUCT_PACKAGES += \
     NoCutoutOverlay
+
+# Refreshrate
+PRODUCT_PACKAGES += \
+    RefreshRateParts
+
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/refreshrate/privapp-permissions-refresh-rate-parts.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/privapp-permissions-refresh-rate-parts.xml
