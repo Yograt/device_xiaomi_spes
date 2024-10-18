@@ -61,6 +61,7 @@ git clone https://gitlab.com/ThankYouMario/proprietary_vendor_xiaomi_camera.git 
 sed -i 's/return mButtonClicked && !mWasPlaying && isPlaying();/return false;/g' frameworks/base/packages/SystemUI/src/com/android/systemui/media/controls/ui/controller/MediaControlPanel.java
 sed -i 's/option.build_variant == "user"/option.build_variant == "userdebug"/g' build/soong/scripts/buildinfo.py
 rm -rf vendor/qcom/opensource/commonsys/fm
+rm -rf vendor/qcom/opensource/power
 cd vendor/gms
 git lfs pull
 cd ../..
