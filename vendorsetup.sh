@@ -60,7 +60,7 @@ git clone https://gitlab.com/ThankYouMario/proprietary_vendor_xiaomi_camera.git 
 git clone https://github.com/halt-spesn/packages_apps_DisplayFeatures.git -b 15.0 --depth=1 packages/apps/DisplayFeatures 
 
 sed -i 's/return mButtonClicked && !mWasPlaying && isPlaying();/return false;/g' frameworks/base/packages/SystemUI/src/com/android/systemui/media/controls/ui/controller/MediaControlPanel.java
-sed -i '/build_desc = f".*option.product/,+1 s/build_desc = f".*"/build_desc = f"{option.build_id}"/g' build/soong/scripts/buildinfo.py
+sed -i '/build_desc = f".*option.build_id/,+1 s/build_desc = f".*"/build_desc = f"{option.build_id}"/g' build/soong/scripts/buildinfo.py
 sed -i '/ro.build.display.id?.*option.build_id/,+5 s/f"ro.build.display.id?.*/print(f"ro.build.display.id?={option.build_id}")/g' build/soong/scripts/buildinfo.py
 sed -i 's/ro.build.display.id?={build_desc}/ro.build.display.id?={build_id}/g' build/soong/scripts/buildinfo.py
 sed -i 's/option.build_variant == "user"/option.build_variant == "userdebug"/g' build/soong/scripts/buildinfo.py
