@@ -389,7 +389,8 @@ PRODUCT_PACKAGES += \
     SpesWifiOverlay \
     SettingsProvider2201117TGOverlay \
     SettingsProvider2201117TIOverlay \
-    SettingsProvider2201117TYOverlay
+    SettingsProvider2201117TYOverlay \
+    BengalCarrierConfigOverlay
 
 PRODUCT_ENFORCE_RRO_TARGETS := *
 
