@@ -64,6 +64,7 @@ sed -i '/build_desc = f".*option.build_id/,+1 s/build_desc = f".*"/build_desc = 
 sed -i '/ro.build.display.id?.*option.build_id/,+5 s/f"ro.build.display.id?.*/f"ro.build.display.id?={option.build_id}")/g' build/soong/scripts/buildinfo.py
 sed -i 's/ro.build.display.id?={build_desc}/ro.build.display.id?={build_id}/g' build/soong/scripts/buildinfo.py
 sed -i 's/option.build_variant == "user"/option.build_variant == "userdebug"/g' build/soong/scripts/buildinfo.py
+grep -q 'Error GetPreviewImageData(StreamInterface* data,' external/piex/src/piex.cc || sed -i '/bool GetDngInformation(StreamInterface\* data, std::uint32_t\* width/ i Error GetPreviewImageData(StreamInterface* data,\n                          PreviewImageData* preview_image_data)\n{\n  return(GetPreviewImageData(data,preview_image_data,nullptr));\n}' external/piex/src/piex.cc
 rm -rf vendor/qcom/opensource/commonsys/fm
 rm -rf vendor/qcom/opensource/power
 cd vendor/gms
