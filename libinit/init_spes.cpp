@@ -29,7 +29,7 @@ std::vector<std::string> ro_props_default_source_order = {
     "", "odm.", "odm_dlkm.", "product.", "system.", "system_ext.", "vendor.", "vendor_dlkm.",
 };
 
-void property_override(string prop, string value)
+void property_override(std::string prop, std:string value)
 {
     auto pi = (prop_info*) __system_property_find(prop.c_str());
 
@@ -72,6 +72,7 @@ void vendor_load_properties() {
            load_redmi_spes();
         }
     }
+}
 
     // Set hardware revision
     property_override("ro.boot.hardware.revision", GetProperty("ro.boot.hwversion", "").c_str());
@@ -119,3 +120,4 @@ void vendor_load_properties() {
     property_override("dalvik.vm.heapminfree", heapminfree);
     property_override("dalvik.vm.heapmaxfree", heapmaxfree);
 }
+
