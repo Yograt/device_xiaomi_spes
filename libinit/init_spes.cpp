@@ -29,7 +29,7 @@ std::vector<std::string> ro_props_default_source_order = {
     "", "odm.", "odm_dlkm.", "product.", "system.", "system_ext.", "vendor.", "vendor_dlkm.",
 };
 
-void property_override(std::string prop, std:string value)
+void property_override(std::string prop, std::string value)
 {
     auto pi = (prop_info*) __system_property_find(prop.c_str());
 
