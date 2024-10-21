@@ -163,7 +163,6 @@ BOARD_KERNEL_CMDLINE += \
     service_locator.enable=1 \
     swiotlb=2048 \
     kpti=off \
-    init.is_dt2w_sensor=1 \
     init.is_st2w_sensor=1
 
 TARGET_KERNEL_ARCH := arm64
