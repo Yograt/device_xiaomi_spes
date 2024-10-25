@@ -20,6 +20,9 @@ ro.bluetooth.wipower=false
 # Blur
 ro.launcher.blur.appLaunch=0
 
+# Launcher
+ro.launcher.depth.widget=0
+
 # Camera
 camera.disable_zsl_mode=1
 
