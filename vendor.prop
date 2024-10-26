@@ -280,3 +280,5 @@ ro.soc.model=SM6225
 
 # Zygote
 zygote.critical_window.minute=10
+ro.usb.uvc.enabled=true
+
