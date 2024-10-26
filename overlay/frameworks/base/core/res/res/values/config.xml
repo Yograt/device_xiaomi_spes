@@ -861,4 +861,7 @@
     <!-- Whether device has a big physical display cutout -->
     <bool name="config_physicalDisplayCutout">true</bool>
     
+        <!-- Type of the tap sensor. Empty if tap is not supported. -->
+    <string name="config_dozeTapSensorType" translatable="false">aosp.sensor.single_tap</string>
+    
 </resources>
