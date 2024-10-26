@@ -335,6 +335,9 @@ PRODUCT_PACKAGES += \
     libstagefrighthw \
     libstagefright_omx.vendor
 
+PRODUCT_PACKAGES += \
+    DeviceAsWebcam
+
 PRODUCT_COPY_FILES += \
     $(call find-copy-subdir-files,*,$(LOCAL_PATH)/configs/media/,$(TARGET_COPY_OUT_VENDOR)/etc) \
     $(LOCAL_PATH)/configs/media/media_profiles.xml:$(TARGET_COPY_OUT_ODM)/etc/media_profiles_V1_0.xml
@@ -381,16 +384,8 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/com.android.nfc_extras.xml:$(TARGET_COPY_OUT_ODM)/etc/permissions/sku_k7tn/com.android.nfc_extras.xml
 
 # Overlays
-PRODUCT_PACKAGES += \
-    AOSPASpesFrameworksOverlay \
-    SpesFrameworksOverlay \
-    SpesSettingsOverlay \
-    SpesSystemUIOverlay \
-    SpesWifiOverlay \
-    SettingsProvider2201117TGOverlay \
-    SettingsProvider2201117TIOverlay \
-    SettingsProvider2201117TYOverlay \
-    BengalCarrierConfigOverlay
+DEVICE_PACKAGE_OVERLAYS += \
+    $(LOCAL_PATH)/overlay
 
 PRODUCT_ENFORCE_RRO_TARGETS := *
 
