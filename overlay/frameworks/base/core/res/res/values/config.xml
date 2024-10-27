@@ -807,9 +807,6 @@
          strictly needed. -->
     <bool name="config_sf_limitedAlpha">true</bool>
     
-        <!-- Type of the tap sensor. Empty if tap is not supported. -->
-    <string name="config_dozeTapSensorType" translatable="false">aosp.sensor.single_tap</string>
-    
         <!-- The bounding path of the cutout region of the main built-in display.
          Must either be empty if there is no cutout region, or a string that is parsable by
          {@link android.util.PathParser}.
@@ -856,4 +853,5 @@
     
         <!-- Type of the tap sensor. Empty if tap is not supported. -->
     <string name="config_dozeTapSensorType" translatable="false">aosp.sensor.single_tap</string>
+
 </resources>
