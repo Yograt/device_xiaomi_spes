@@ -742,14 +742,7 @@
     <string name="config_appsNotReportingCrashes">com.google.android.tts</string>
 
     <!-- If true, the display will be shifted around in ambient mode. -->
-    <bool name="config_enableBurnInProtection">false/bool>
-
-    <array name="config_sfps_sensor_props_0" translatable="false">
-        <item></item>
-        <item></item>
-        <item>930</item>
-        <item>150</item>
-    </array>
+    <bool name="config_enableBurnInProtection">false</bool>
 
     <!-- The list of components which should be automatically disabled for a specific package. -->
     <string-array name="config_deviceDisabledComponents" translatable="false">
@@ -863,5 +856,4 @@
     
         <!-- Type of the tap sensor. Empty if tap is not supported. -->
     <string name="config_dozeTapSensorType" translatable="false">aosp.sensor.single_tap</string>
-    
 </resources>
