@@ -444,8 +444,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     init.mdm.sh \
     init.qcom.post_boot.sh \
-    init.qcom.sh \
-    init.qcom.usb.sh
+    init.qcom.sh
 
 PRODUCT_PACKAGES += \
     fstab.qcom \
@@ -453,7 +452,6 @@ PRODUCT_PACKAGES += \
     fstab.zram \
     init.qcom.power.rc \
     init.qcom.rc \
-    init.qcom.usb.rc \
     init.recovery.qcom.rc \
     init.stnfc.rc \
     init.target.rc \
@@ -477,7 +475,8 @@ PRODUCT_COPY_FILES += \
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH) \
-    hardware/xiaomi
+    hardware/xiaomi \
+    vendor/qcom/opensource/usb/etc
 
 # Telephony
 PRODUCT_PACKAGES += \
@@ -509,11 +508,15 @@ PRODUCT_PACKAGES += \
 
 # USB
 PRODUCT_PACKAGES += \
-    android.hardware.usb@1.3-service.dual_role_usb \
+    android.hardware.usb@1.3-service-qti \
     android.hardware.usb.gadget@1.2-service-qti
 
 PRODUCT_COPY_FILES += \
     vendor/qcom/opensource/usb/hal/usb_compositions.conf:$(TARGET_COPY_OUT_VENDOR)/etc/usb_compositions.conf
+
+PRODUCT_PACKAGES += \
+    init.qcom.usb.rc \
+    init.qcom.usb.sh
 
 # Vendor service manager
 PRODUCT_PACKAGES += \
