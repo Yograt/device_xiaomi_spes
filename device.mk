@@ -253,6 +253,11 @@ PRODUCT_PACKAGES += \
     vendor.goodix.hardware.fingerprintextension@1.0.vendor \
     com.fingerprints.extension@1.0.vendor
 
+
+# DeviceAsWebcam
+PRODUCT_PACKAGES += \
+    DeviceAsWebcamSpes
+
 # Gatekeeper
 PRODUCT_PACKAGES += \
     android.hardware.gatekeeper@1.0.vendor
