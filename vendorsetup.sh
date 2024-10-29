@@ -55,13 +55,21 @@ if check_dir hardware/xiaomi; then
     git clone https://github.com/halt-spesn/hardware_xiaomi -b vauxite hardware/xiaomi
 fi
 
-#Camera
+
 git clone https://gitlab.com/ThankYouMario/proprietary_vendor_xiaomi_camera.git -b vauxite-sm6225 --depth=1 vendor/xiaomi/camera
 git clone https://github.com/halt-spesn/packages_apps_DisplayFeatures.git -b 15.0 --depth=1 packages/apps/DisplayFeatures 
+rm -rf packages/services/DeviceAsWebcam
+git clone https://github.com/halt-spesn/packages_services_DeviceAsWebcam.git packages/services/DeviceAsWebcam
 
 sed -i 's/return mButtonClicked && !mWasPlaying && isPlaying();/return false;/g' frameworks/base/packages/SystemUI/src/com/android/systemui/media/controls/ui/controller/MediaControlPanel.java
+sed -i 's|/vendor/bin/hw/android\.hardware\.usb-service\.qti|/(vendor|system/vendor)/bin/hw/android.hardware.usb@1.[0-3]-service-qti|g' device/qcom/sepolicy_vndr/legacy-um/legacy/vendor/common/file_contexts
+sed -i 's|/vendor/bin/hw/android\.hardware\.usb\.gadget-service\.qti|/(vendor|system/vendor)/bin/hw/android\.hardware\.usb\.gadget@1\.[0-2]-service-qti|g' device/qcom/sepolicy_vndr/legacy-um/legacy/vendor/common/file_contexts
+sed -i 's|/vendor/bin/hw/android\.hardware\.usb-service\.qti|/vendor/bin/hw/android\.hardware\.usb@1\.[0-3]-service-qti|g' device/qcom/sepolicy_vndr/legacy-um/qva/vendor/common/file_contexts
+sed -i 's|/vendor/bin/hw/android\.hardware\.usb\.gadget-service\.qti|/vendor/bin/hw/android\.hardware\.usb\.gadget@1\.[0-2]-service-qti|g' device/qcom/sepolicy_vndr/legacy-um/qva/vendor/common/file_contexts
 rm -rf vendor/qcom/opensource/commonsys/fm
 rm -rf vendor/qcom/opensource/power
+rm -rf vendor/qcom/opensource/usb
+git clone https://github.com/halt-spesn/android_vendor_qcom_opensource_usb vendor/qcom/opensource/usb
 cd vendor/gms
 git lfs pull
 cd ../..
