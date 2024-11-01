@@ -58,6 +58,8 @@ rm -rf packages/services/DeviceAsWebcam
 git clone https://github.com/halt-spesn/packages_services_DeviceAsWebcam.git packages/services/DeviceAsWebcam
 
 sed -i 's/return mButtonClicked && !mWasPlaying && isPlaying();/return false;/g' frameworks/base/packages/SystemUI/src/com/android/systemui/media/controls/ui/controller/MediaControlPanel.java
+sed -i 's/\("BuildVariant"\s*:\s*"\)user\(".*\)/\1userdebug\2/' build/soong/scripts/gen_build_prop.py
+sed -i "215s/{config\['BuildKeys'\]}//" build/soong/scripts/gen_build_prop.py
 rm -rf vendor/qcom/opensource/commonsys/fm
 rm -rf vendor/qcom/opensource/power
 rm -rf vendor/qcom/opensource/usb
