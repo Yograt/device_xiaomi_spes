@@ -5,9 +5,6 @@ GREEN="\033[0;32m"
 YELLOW="\033[1;33m"
 END="\033[0m"
 
-# Branches
-VENDOR_BRANCH="15.0"
-
 # Function to check if a directory exists
 check_dir() {
     if [ -d "$1" ]; then
@@ -38,8 +35,7 @@ fi
 
 # Clone Vendor Sources
 if check_dir vendor/xiaomi/spes; then
-    echo -e "${GREEN}Cloning vendor sources from spes-development (branch: ${YELLOW}$VENDOR_BRANCH${GREEN})...${END}"
-    git clone https://github.com/halt-spesn/vendor_xiaomi_spes -b $VENDOR_BRANCH vendor/xiaomi/spes
+    git clone https://github.com/halt-spesn/vendor_xiaomi_spes -b 15.0 vendor/xiaomi/spes
 fi
 
 # Clone Kernel Sources
@@ -62,14 +58,10 @@ rm -rf packages/services/DeviceAsWebcam
 git clone https://github.com/halt-spesn/packages_services_DeviceAsWebcam.git packages/services/DeviceAsWebcam
 
 sed -i 's/return mButtonClicked && !mWasPlaying && isPlaying();/return false;/g' frameworks/base/packages/SystemUI/src/com/android/systemui/media/controls/ui/controller/MediaControlPanel.java
-sed -i 's|/vendor/bin/hw/android\.hardware\.usb-service\.qti|/(vendor|system/vendor)/bin/hw/android.hardware.usb@1.[0-3]-service-qti|g' device/qcom/sepolicy_vndr/legacy-um/legacy/vendor/common/file_contexts
-sed -i 's|/vendor/bin/hw/android\.hardware\.usb\.gadget-service\.qti|/(vendor|system/vendor)/bin/hw/android\.hardware\.usb\.gadget@1\.[0-2]-service-qti|g' device/qcom/sepolicy_vndr/legacy-um/legacy/vendor/common/file_contexts
-sed -i 's|/vendor/bin/hw/android\.hardware\.usb-service\.qti|/vendor/bin/hw/android\.hardware\.usb@1\.[0-3]-service-qti|g' device/qcom/sepolicy_vndr/legacy-um/qva/vendor/common/file_contexts
-sed -i 's|/vendor/bin/hw/android\.hardware\.usb\.gadget-service\.qti|/vendor/bin/hw/android\.hardware\.usb\.gadget@1\.[0-2]-service-qti|g' device/qcom/sepolicy_vndr/legacy-um/qva/vendor/common/file_contexts
 rm -rf vendor/qcom/opensource/commonsys/fm
 rm -rf vendor/qcom/opensource/power
 rm -rf vendor/qcom/opensource/usb
-git clone https://github.com/halt-spesn/android_vendor_qcom_opensource_usb vendor/qcom/opensource/usb
+git clone https://github.com/LineageOS/android_vendor_qcom_opensource_usb.git -b lineage-22.0 vendor/qcom/opensource/usb
 cd vendor/gms
 git lfs pull
 cd ../..
