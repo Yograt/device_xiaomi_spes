@@ -63,7 +63,7 @@ sed -i "215s/{config\['BuildKeys'\]}//" build/soong/scripts/gen_build_prop.py
 rm -rf vendor/qcom/opensource/commonsys/fm
 rm -rf vendor/qcom/opensource/power
 rm -rf vendor/qcom/opensource/usb
-git clone https://github.com/LineageOS/android_vendor_qcom_opensource_usb.git -b lineage-22.0 vendor/qcom/opensource/usb
+git clone https://github.com/halt-spesn/android_vendor_qcom_opensource_usb.git -b lineage-22.0 vendor/qcom/opensource/usb
 cd vendor/gms
 git lfs pull
 cd ../..
