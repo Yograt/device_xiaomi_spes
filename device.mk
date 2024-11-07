@@ -253,6 +253,11 @@ PRODUCT_PACKAGES += \
     vendor.goodix.hardware.fingerprintextension@1.0.vendor \
     com.fingerprints.extension@1.0.vendor
 
+# FM
+PRODUCT_PACKAGES += \
+    FM2 \
+    qcom.fmradio
+
 
 # DeviceAsWebcam
 PRODUCT_PACKAGES += \
