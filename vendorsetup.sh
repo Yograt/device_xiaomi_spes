@@ -53,19 +53,9 @@ fi
 
 
 git clone https://gitlab.com/ThankYouMario/proprietary_vendor_xiaomi_camera.git -b vauxite-sm6225 --depth=1 vendor/xiaomi/camera
-git clone https://github.com/halt-spesn/packages_apps_DisplayFeatures.git -b 15.0 --depth=1 packages/apps/DisplayFeatures 
-rm -rf packages/services/DeviceAsWebcam
-git clone https://github.com/halt-spesn/packages_services_DeviceAsWebcam.git packages/services/DeviceAsWebcam
-
-sed -i 's/return mButtonClicked && !mWasPlaying && isPlaying();/return false;/g' frameworks/base/packages/SystemUI/src/com/android/systemui/media/controls/ui/controller/MediaControlPanel.java
-sed -i 's/\("BuildVariant"\s*:\s*"\)user\(".*\)/\1userdebug\2/' build/soong/scripts/gen_build_prop.py
-sed -i "215s/{config\['BuildKeys'\]}//" build/soong/scripts/gen_build_prop.py
-rm -rf vendor/qcom/opensource/usb
+rm -rf packages/apps/DisplayFeatures
+git clone https://github.com/halt-spesn/packages_apps_DisplayFeatures.git -b 15.0 --depth=1 packages/apps/DisplayFeatures
 rm -rf vendor/qcom/opensource/power
-git clone https://github.com/halt-spesn/android_vendor_qcom_opensource_usb.git -b lineage-22.0 vendor/qcom/opensource/usb
-cd vendor/gms
-git lfs pull
-cd ../..
 
 # End
 echo -e "${YELLOW}All patches have been successfully applied; your device sources are now ready!${END}"
