@@ -43,7 +43,7 @@ fi
     cd kernel/xiaomi/sm6225
     curl -LSs "https://raw.githubusercontent.com/tiann/KernelSU/main/kernel/setup.sh" | bash -s v0.9.5
     cd ../../..
-    
+
 
 # Clone Hardware Sources
 if check_dir hardware/xiaomi; then
@@ -56,6 +56,8 @@ git clone https://gitlab.com/ThankYouMario/proprietary_vendor_xiaomi_camera.git 
 rm -rf packages/apps/DisplayFeatures
 git clone https://github.com/halt-spesn/packages_apps_DisplayFeatures.git -b 15.0 --depth=1 packages/apps/DisplayFeatures
 rm -rf vendor/qcom/opensource/power
+rm vendor/derp/tools/generate_json_build_info.sh
+cp device/xiaomi/spes/genjson vendor/derp/tools/generate_json_build_info.sh
 
 # End
 echo -e "${YELLOW}All patches have been successfully applied; your device sources are now ready!${END}"
