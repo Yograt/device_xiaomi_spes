@@ -1,2 +1,4 @@
+allow system_app logpersistd_logging_prop:file { read };
+allow system_app logpersistd_logging_prop:property_service { set };
 allow system_app sysfs_displayfeatures:file rw_file_perms;
 hal_client_domain(system_app, hal_mlipay)
