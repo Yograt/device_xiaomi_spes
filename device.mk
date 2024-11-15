@@ -287,6 +287,9 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/permissions/privapp-permissions-google-hotword.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/privapp-permissions-google-hotword.xml
 
+# DocumentsUI Override
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/overrides/component-overrides_documentsui.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/sysconfig/component-overrides_documentsui.xml
 # IPACM
 PRODUCT_PACKAGES += \
     ipacm \
