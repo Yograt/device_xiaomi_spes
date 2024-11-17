@@ -57,7 +57,6 @@ rm -rf packages/apps/DisplayFeatures
 git clone https://github.com/halt-spesn/packages_apps_DisplayFeatures.git -b 15.0 --depth=1 packages/apps/DisplayFeatures
 rm -rf packages/apps/Updater
 git clone https://github.com/halt-spesn/packages_apps_Updater -b 15 packages/apps/Updater
-rm -rf vendor/qcom/opensource/power
 rm vendor/derp/tools/generate_json_build_info.sh
 cp device/xiaomi/spes/genjson vendor/derp/tools/generate_json_build_info.sh
 
