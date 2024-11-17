@@ -35,22 +35,22 @@ fi
 
 if check_dir vendor/xiaomi/spes; then
     echo -e "${GREEN}Cloning vendor sources from spes-development (branch: ${YELLOW}$VENDOR_BRANCH${GREEN})...${END}"
-    git clone https://github.com/spes-development/vendor_xiaomi_spes -b $VENDOR_BRANCH vendor/xiaomi/spes
+    git clone https://github.com/Yograt/vendor_xiaomi_spes -b $VENDOR_BRANCH vendor/xiaomi/spes
 fi
 
 if check_dir kernel/xiaomi/sm6225; then
     echo -e "${GREEN}Cloning kernel sources from spes-development (branch: ${YELLOW}$KERNEL_BRANCH${GREEN})...${END}"
-    git clone https://github.com/spes-development/kernel_xiaomi_sm6225 --depth=1 -b $KERNEL_BRANCH kernel/xiaomi/sm6225
+    git clone https://github.com/Yograt/kernel_xiaomi_sm6225 --depth=1 -b $KERNEL_BRANCH kernel/xiaomi/sm6225
 fi
 
 if check_dir hardware/xiaomi; then
     echo -e "${GREEN}Cloning hardware sources from LineageOS (branch: ${YELLOW}$HARDWARE_BRANCH${GREEN})...${END}"
-    git clone https://github.com/LineageOS/android_hardware_xiaomi -b $HARDWARE_BRANCH hardware/xiaomi
+    git clone https://github.com/Yograt/android_hardware_xiaomi -b $HARDWARE_BRANCH hardware/xiaomi
 fi
 
 if check_dir hardware/samsung-ext/interfaces; then
     echo -e "${GREEN}Cloning Debugging-Tools from spes-development (branch: ${YELLOW}$DEBUG_BRANCH${GREEN})...${END}"
-    git clone https://github.com/spes-development/hardware_samsung-extra_interfaces -b $DEBUG_BRANCH hardware/samsung-ext/interfaces
+    git clone https://github.com/Yograt/hardware_samsung-extra_interfaces -b $DEBUG_BRANCH hardware/samsung-ext/interfaces
 fi
 
 echo -e "${YELLOW}All patches have been successfully applied; your device sources are now ready!${END}"
