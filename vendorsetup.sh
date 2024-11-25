@@ -6,7 +6,7 @@ END="\033[0m"
 
 VENDOR_BRANCH="15.0"
 KERNEL_BRANCH="NaughtySilver"
-HARDWARE_BRANCH="lineage-22.0"
+HARDWARE_BRANCH="lineage-21"
 DEBUG_BRANCH="lineage-22"
 
 check_dir() {
