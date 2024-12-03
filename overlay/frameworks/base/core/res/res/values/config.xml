@@ -741,7 +741,7 @@
     <integer-array name="config_ambientThresholdsOfPeakRefreshRate">
         <item>-1</item>
     </integer-array>
-
+    
     <!-- default refresh rate in the zone defined by brightness and ambient thresholds -->
     <integer name="config_defaultRefreshRateInZone">90</integer>
 
@@ -832,6 +832,12 @@
         <item>0</item> <!-- COLOR_MODE_DEFAULT    -->
         <item>7</item> <!-- COLOR_MODE_SRGB -->
       </integer-array>
+     
+     <!-- Default list of files pinned by the Pinner Service -->
+    <string-array translatable="false" name="config_defaultPinnerServiceFiles">
+        <item>"/system_ext/priv-app/MotoDolbyDax3/MotoDolbyDax3.apk"</item>
+        <item>"/system_ext/priv-app/daxService/daxService.apk"</item>
+    </string-array>
 
     <!-- Enables or disables haptic effect when the text insertion/selection handle is moved
          manually by the user. Off by default, since the expected haptic feedback may not be
