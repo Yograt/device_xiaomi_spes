@@ -84,6 +84,8 @@ persist.mm.enable.prefetch=true
 
 # Netflix Properties
 ro.netflix.bsp_rev=Q6115-31409-1
+ro.netflix.channel=004ee050-1a17-11e9-bb61-6f1da27fb55b
+ro.netflix.signup=1
 
 # Netmgr
 persist.data.netmgrd.qos.enable=true
