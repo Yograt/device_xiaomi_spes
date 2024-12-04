@@ -117,9 +117,6 @@ drm.service.enabled=true
 # FS-verity
 ro.apk_verity.mode=2
 
-# FRP
-ro.frp.pst=/dev/block/bootdevice/by-name/frp
-
 # Graphics
 debug.sf.auto_latch_unsignaled=false
 debug.sf.disable_client_composition_cache=1
