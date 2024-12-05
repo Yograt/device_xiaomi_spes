@@ -1,6 +1,6 @@
 ## Device Configuration for Xiaomi Redmi Note 11
 
-The Xiaomi Redmi Note 11 (codenamed _"spes/spesn"_) is a mid range smartphone from Xiaomi.
+The Xiaomi Redmi Note 11 (codenamed _"spes/spesn"_) is a mid range smartphone from Xiaomi. This tree belongs to Yograt.
 
 Redmi Note 11 was announced and released in January/February 2022.
 
