@@ -42,4 +42,3 @@ allow hal_displayfeature_default vendor_sysfs_graphics:dir r_dir_perms;
 allow hal_displayfeature_default vendor_display_vendor_data_file:file {open getattr read create};
 allow hal_displayfeature_default hal_displayfeature_default:capability { sys_admin };
 allow hal_displayfeature_default vendor_pps_socket:sock_file { write };
-

@@ -10,6 +10,9 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
 # Include GSI
 $(call inherit-product, $(SRC_TARGET_DIR)/product/developer_gsi_keys.mk)
 
+# Setup dalvik vm configs
+$(call inherit-product, frameworks/native/build/phone-xhdpi-6144-dalvik-heap.mk)
+
 # Enable Virtual A/B
 ifneq ($(WITH_GMS),true)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota/launch_with_vendor_ramdisk.mk)
@@ -109,15 +112,10 @@ PRODUCT_PACKAGES += \
     audio.usb.default
 
 PRODUCT_PACKAGES += \
-    libaudioroute \
-    libaudioroute.vendor \
     libaudio-resampler \
-    libaudioroute.vendor \
-    libprocessgroup.vendor \
     libqcompostprocbundle \
     libqcomvisualizer \
     libqcomvoiceprocessing \
-    libstagefright_softomx_plugin.vendor \
     libtinycompress
 
 # Audio configs
@@ -147,18 +145,18 @@ PRODUCT_PACKAGES += \
     android.hardware.boot@1.2-impl-qti.recovery \
     android.hardware.boot@1.2-service
 
+PRODUCT_PACKAGES_DEBUG += \
+    bootctl
+
 # Camera
 PRODUCT_PACKAGES += \
-    libutilscallstack.vendor \
     android.hardware.camera.provider@2.4-impl \
-    android.hardware.camera.provider@2.4-service_64 \
-    libpng.vendor
+    android.hardware.camera.provider@2.4-service_64
 
 PRODUCT_PACKAGES += \
     libcamera2ndk_vendor \
     libgui_vendor \
-    libstdc++_vendor \
-    libpiex_shim
+    libstdc++.vendor
 
 PRODUCT_PACKAGES += \
     vendor.qti.hardware.camera.device@1.0.vendor \
@@ -173,11 +171,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     android.hardware.ir@1.0-impl \
     android.hardware.ir@1.0-service
-
-# Dex/ART optimization
-PRODUCT_ART_TARGET_INCLUDE_DEBUG_BUILD := false
-PRODUCT_DEX_PREOPT_DEFAULT_COMPILER_FILTER := speed-profile
-USE_DEX2OAT_DEBUG := false
 
 # Display
 PRODUCT_PACKAGES += \
@@ -221,7 +214,6 @@ TARGET_EXCLUDES_AUDIOFX := true
 
 # DRM
 PRODUCT_PACKAGES += \
-    android.hardware.drm@1.3.vendor \
     android.hardware.drm@1.4.vendor \
     android.hardware.drm-service.clearkey
 
@@ -244,10 +236,7 @@ PRODUCT_PACKAGES += \
 
 # Fingerprint
 PRODUCT_PACKAGES += \
-    android.hardware.biometrics.fingerprint@2.3-service.xiaomi \
-    libvendor.goodix.hardware.biometrics.fingerprint@2.1.vendor \
-    vendor.goodix.hardware.fingerprintextension@1.0.vendor \
-    com.fingerprints.extension@1.0.vendor
+    android.hardware.biometrics.fingerprint@2.3-service.xiaomi
 
 # FM
 PRODUCT_PACKAGES += \
@@ -296,11 +285,8 @@ PRODUCT_DEX_PREOPT_BOOT_IMAGE_PROFILE_LOCATION := frameworks/base/config/boot-im
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/keylayout/gpio-keys.kl:$(TARGET_COPY_OUT_SYSTEM)/usr/keylayout/gpio-keys.kl \
     $(LOCAL_PATH)/configs/keylayout/uinput-fpc.kl:$(TARGET_COPY_OUT_SYSTEM)/usr/keylayout/uinput-fpc.kl \
-    $(LOCAL_PATH)/configs/keylayout/uinput-goodix.kl:$(TARGET_COPY_OUT_SYSTEM)/usr/keylayout/uinput-goodix.kl
-
-# IRQ
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/msm_irqbalance.conf:$(TARGET_COPY_OUT_VENDOR)/etc/msm_irqbalance.conf
+    $(LOCAL_PATH)/configs/keylayout/uinput-goodix.kl:$(TARGET_COPY_OUT_SYSTEM)/usr/keylayout/uinput-goodix.kl \
+    $(LOCAL_PATH)/configs/keylayout/uinput-silead.kl:$(TARGET_COPY_OUT_SYSTEM)/usr/keylayout/uinput-silead.kl
 
 # Keymaster
 PRODUCT_PACKAGES += \
@@ -308,11 +294,7 @@ PRODUCT_PACKAGES += \
 
 # Lights
 PRODUCT_PACKAGES += \
-    android.hardware.light-service.xiaomi
-
-# Lineage Health
-PRODUCT_PACKAGES += \
-    vendor.lineage.health-service.default
+    android.hardware.lights-service.spes
 
 # Media
 PRODUCT_PACKAGES += \
@@ -409,13 +391,10 @@ PRODUCT_COPY_FILES += \
 
 # QMI
 PRODUCT_PACKAGES += \
-    libcurl.vendor \
     libjson \
-    libjsoncpp.vendor \
     libqti_vndfwk_detect \
     libqti_vndfwk_detect.vendor \
     libvndfwk_detect_jni.qti \
-    libsqlite.vendor \
     libvndfwk_detect_jni.qti.vendor
 
 # Quick Tap
@@ -423,23 +402,17 @@ TARGET_SUPPORTS_QUICK_TAP := true
 
 # RIL
 PRODUCT_PACKAGES += \
-    libcurl.vendor \
-    libprocessgroup.vendor \
-    libnetutils.vendor \
-    libsqlite.vendor
-
-PRODUCT_PACKAGES += \
     android.hardware.radio@1.6.vendor \
     android.hardware.radio.config@1.3.vendor \
     android.hardware.radio.deprecated@1.0.vendor \
     android.hardware.secure_element@1.2.vendor \
-    libprotobuf-cpp-full-3.9.1-vendorcompat \
-    libprotobuf-cpp-lite-3.9.1-vendorcompat \
+    libprotobuf-cpp-full \
     librmnetctl \
     libxml2
 
 # Rootdir
 PRODUCT_PACKAGES += \
+    init.display.refresh.sh \
     init.mdm.sh \
     init.qcom.post_boot.sh \
     init.qcom.sh \
@@ -459,10 +432,7 @@ PRODUCT_PACKAGES += \
 
 # Sensors
 PRODUCT_PACKAGES += \
-    android.hardware.sensors@2.0-ScopedWakelock.vendor \
-    android.hardware.sensors-service.xiaomi-multihal \
-    android.frameworks.sensorservice@1.0.vendor \
-    android.frameworks.sensorservice@1.0 \
+    android.hardware.sensors@2.1-service.multihal \
     libsensorndkbridge
 
 # Soong namespaces
@@ -498,7 +468,7 @@ PRODUCT_PACKAGES += \
 
 # USB
 PRODUCT_PACKAGES += \
-    android.hardware.usb-service.qti
+    android.hardware.usb@1.2.vendor
 
 # Vendor service manager
 PRODUCT_PACKAGES += \
@@ -516,9 +486,8 @@ PRODUCT_EXTRA_VNDK_VERSIONS := 30
 
 # WiFi
 PRODUCT_PACKAGES += \
-    android.hardware.wifi-service \
+    android.hardware.wifi@1.0-service \
     hostapd \
-    libcld80211 \
     libwpa_client \
     libwifi-hal-ctrl \
     libwifi-hal-qcom \
@@ -536,20 +505,13 @@ PRODUCT_COPY_FILES += \
 # WiFi Display
 PRODUCT_PACKAGES += \
     libnl \
-    libwfdaac_vendor \
-    libjsoncpp.vendor \
-    libpng.vendor
+    libwfdaac_vendor
 
+ifdef CR_VERSION
 PRODUCT_BOOT_JARS += \
     WfdCommon
+endif
 
 # XiaomiParts
 PRODUCT_PACKAGES += \
     XiaomiParts
-
-# No Cutout Overlay
-PRODUCT_PACKAGES += \
-    NoCutoutOverlay
-
-# Include debug tool
-$(call inherit-product, hardware/samsung-ext/interfaces/debug-tools/debug.mk)
