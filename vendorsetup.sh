@@ -55,6 +55,7 @@ fi
 git clone https://gitlab.com/ThankYouMario/proprietary_vendor_xiaomi_camera.git -b vauxite-sm6225 --depth=1 vendor/xiaomi/camera
 rm -rf packages/apps/DisplayFeatures
 git clone https://github.com/halt-spesn/packages_apps_DisplayFeatures.git -b 15.0 --depth=1 packages/apps/DisplayFeatures
+rm -rf vendor/qcom/opensource/power
 rm vendor/derp/tools/generate_json_build_info.sh
 cp device/xiaomi/spes/genjson vendor/derp/tools/generate_json_build_info.sh
 
