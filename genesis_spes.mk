@@ -16,9 +16,6 @@ $(call inherit-product, device/xiaomi/spes/device.mk)
 $(call inherit-product, vendor/genesis/config/common_full_phone.mk)
 GENESIS_MAINTAINER := Yograt
 GENESIS_OFFICIAL := false
-
-# Inherit some common stuff.
-$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 TARGET_BOOT_ANIMATION_RES := 1080
 TARGET_FACE_UNLOCK_SUPPORTED := true
 TARGET_SUPPORTS_QUICK_TAP := false
