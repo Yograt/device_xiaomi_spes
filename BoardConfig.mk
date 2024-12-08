@@ -139,6 +139,7 @@ TARGET_RECOVERY_DEVICE_MODULES := init_xiaomi_spes
 # TARGET_FORCE_PREBUILT_KERNEL := true
 
 # Add lines pointing to the custom kernel source
+BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb
 TARGET_KERNEL_ARCH := arm64
 TARGET_KERNEL_CONFIG := vendor/bengal_defconfig
 TARGET_KERNEL_SOURCE := kernel/xiaomi/sm6225
