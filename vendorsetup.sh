@@ -19,9 +19,9 @@ cp device/qcom/sepolicy_vndr/legacy-um/qva/vendor/bengal/legacy-ims/hal_rcsservi
 
 # Vendor & Kernel Sources
 echo -e "${color}Cloning vendor & kernel from tanvirr007${end}"
-git clone https://github.com/spes-development/vendor_xiaomi_spes -b 14.0 vendor/xiaomi/spes
-git clone https://github.com/spes-development/kernel_xiaomi_sm6225 --depth=1 -b NaughtySilver kernel/xiaomi/sm6225
+git clone https://github.com/Yograt/vendor_xiaomi_spes -b 14.0 vendor/xiaomi/spes
+git clone https://github.com/Yograt/kernel_xiaomi_sm6225 --depth=1 -b NaughtySilver kernel/xiaomi/sm6225
 
 # Lineage-21 Hardware Source
 echo -e "${color}Cloning Hardware from Lineage-21${end}"
-git clone https://github.com/LineageOS/android_hardware_xiaomi.git -b lineage-21 hardware/xiaomi
+git clone https://github.com/Yograt/android_hardware_xiaomi.git -b lineage-21 hardware/xiaomi
