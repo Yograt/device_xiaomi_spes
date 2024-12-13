@@ -28,3 +28,6 @@ TARGET_BOOT_ANIMATION_RES := 1080
 
 # Overlay
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay-lineage
+
+# Fingerprint
+BUILD_FINGERPRINT := "Redmi/spes_global/spes:13/TKQ1.221114.001/V816.0.8.0.TGCMIXM:user/release-keys"
